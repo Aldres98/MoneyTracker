@@ -3,9 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorHelloworldBackground">#84c0c5</color>
     <color name="colorHelloworldText">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffff</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorTransparent">#00000000</color>
+    <color name="colorLightGreen">#d1e5c6</color>
 
 
 </resources>

@@ -1,5 +1,6 @@
 package com.example.aldres.moneytracker;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -8,8 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
-    Boolean text1 = false;
-    Boolean text2 = false;
+    Boolean isTitleTextFilled = false;
+    Boolean isPriceTextFilled = false;
 
 
     @Override
@@ -31,15 +32,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.length() > 0) {
-                    text1 = true;
-                    if (text1 && text2) {
+                    isTitleTextFilled = true;
+                    if (isTitleTextFilled && isPriceTextFilled) {
                         addButton.setEnabled(true);
+                        addButton.setColorFilter(Color.rgb(199, 242,173));
                     }
                 }
 
                 else {
-                    text1 = false;
+                    isTitleTextFilled = false;
                     addButton.setEnabled(false);
+                    addButton.clearColorFilter();
                 }
             }
 
@@ -57,15 +60,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.length() > 0) {
-                    text2 = true;
-                    if (text1 && text2) {
+                    isPriceTextFilled = true;
+                    if (isTitleTextFilled && isPriceTextFilled) {
                         addButton.setEnabled(true);
+                        addButton.setColorFilter(Color.rgb(199, 242,173));
+
                     }
                 }
 
                 else {
-                    text2 = false;
+                    isPriceTextFilled = false;
                     addButton.setEnabled(false);
+                    addButton.clearColorFilter();
                 }
             }
 
