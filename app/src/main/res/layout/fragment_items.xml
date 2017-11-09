@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_pattern"
-    tools:context="com.example.aldres.moneytracker.ItemsActivity">
+    tools:context="com.example.aldres.moneytracker.ItemsFragment">
 
  <android.support.v7.widget.RecyclerView
      android:id="@+id/recycler"
      android:layout_width="match_parent"
      android:layout_height="match_parent"
-     android:paddingTop="15dp"
-     android:paddingLeft="5dp"
-     android:paddingRight="5dp"
-     android:paddingBottom="15dp"
+     android:paddingTop="@dimen/item_paddingTop"
+     android:paddingLeft="@dimen/item_paddingLeft"
+     android:paddingRight="@dimen/item_paddingRight"
+     android:paddingBottom="@dimen/item_paddingBottom"
      tools:listitem="@layout/item" />
 </FrameLayout>
