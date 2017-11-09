@@ -10,5 +10,8 @@
     <color name="colorTransparent">#00000000</color>
     <color name="colorLightGreen">#d1e5c6</color>
 
+    <color name="colorItem_name_bg">#fcc31e</color>
+    <color name="colorItem_price_bg">#985305</color>
+
 
 </resources>
