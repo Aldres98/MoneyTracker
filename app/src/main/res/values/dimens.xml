@@ -2,4 +2,8 @@
 <resources>
     <dimen name="helloworldTextSize">20sp</dimen>
     <dimen name="main_width">60dp</dimen>
+    <dimen name="item_paddingTop">15dp</dimen>
+    <dimen name="item_paddingBottom">15dp</dimen>
+    <dimen name="item_paddingLeft">5dp</dimen>
+    <dimen name="item_paddingRight">5dp</dimen>
 </resources>
