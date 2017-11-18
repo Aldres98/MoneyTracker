@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg_pattern"
     tools:context="com.example.aldres.moneytracker.ItemsFragment">
 
@@ -15,4 +16,16 @@
      android:paddingRight="@dimen/item_paddingRight"
      android:paddingBottom="@dimen/item_paddingBottom"
      tools:listitem="@layout/item" />
+ <android.support.design.widget.FloatingActionButton
+     android:id="@+id/fab_add"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_gravity="bottom|end"
+     app:borderWidth="0dp"
+     android:layout_marginRight="18dp"
+     app:fabSize="normal"
+     android:layout_marginBottom="18dp"
+     android:src="@drawable/ic_add_white_24dp"
+     android:backgroundTint="@color/colorFabMainColor"
+     />
 </FrameLayout>
