@@ -8,10 +8,14 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.example.aldres.moneytracker.api.Api;
+
 public class AddActivity extends AppCompatActivity {
 
     Boolean isTitleTextFilled = false;
     Boolean isPriceTextFilled = false;
+    private Api api;
+    private static final int LOADER_ITEMS_ADD = 1;
 
 
     @Override
@@ -22,6 +26,7 @@ public class AddActivity extends AppCompatActivity {
         final EditText priceEdit = findViewById(R.id.price);
         final ImageButton addButton = findViewById(R.id.add);
         addButton.setEnabled(false);
+        api = ((App) getApplication()).getApi();
 
 
         titleEdit.addTextChangedListener(new TextWatcher() {
@@ -36,11 +41,9 @@ public class AddActivity extends AppCompatActivity {
                     isTitleTextFilled = true;
                     if (isTitleTextFilled && isPriceTextFilled) {
                         addButton.setEnabled(true);
-                        addButton.setColorFilter(Color.rgb(199, 242,173));
+                        addButton.setColorFilter(Color.rgb(199, 242, 173));
                     }
-                }
-
-                else {
+                } else {
                     isTitleTextFilled = false;
                     addButton.setEnabled(false);
                     addButton.clearColorFilter();
@@ -64,12 +67,10 @@ public class AddActivity extends AppCompatActivity {
                     isPriceTextFilled = true;
                     if (isTitleTextFilled && isPriceTextFilled) {
                         addButton.setEnabled(true);
-                        addButton.setColorFilter(Color.rgb(199, 242,173));
+                        addButton.setColorFilter(Color.rgb(199, 242, 173));
 
                     }
-                }
-
-                else {
+                } else {
                     isPriceTextFilled = false;
                     addButton.setEnabled(false);
                     addButton.clearColorFilter();
@@ -80,9 +81,10 @@ public class AddActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
             }
         });
-
-
     }
+
+
+
 
 
     @Override
@@ -104,6 +106,6 @@ public class AddActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }}
+    protected void onDestroy() {super.onDestroy();}
+    }
+

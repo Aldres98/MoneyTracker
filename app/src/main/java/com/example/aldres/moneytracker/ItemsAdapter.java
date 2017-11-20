@@ -17,26 +17,12 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
 
     private List<Item> items = new ArrayList<>();
 
-    public ItemsAdapter() {
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Сковородка с антипригарным покрытием", 55));
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Сковородка с антипригарным покрытием", 55));
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Сковородка с антипригарным покрытием", 55));
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Сковородка с антипригарным покрытием", 55));
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Сковородка с антипригарным покрытием", 55));
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Сковородка с антипригарным покрытием", 55));
+    public void setItems(List<Item> items) {
+        this.items = items;
+        notifyDataSetChanged();
     }
+
+
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -68,8 +54,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         }
 
          void bind(Item item){
-            price.setText(String.valueOf(item.getPrice()).concat("\u20BD"));
-            name.setText(item.getName());
+            price.setText(String.valueOf(item.price).concat("\u20BD"));
+            name.setText(item.name);
         }
     }
 }
