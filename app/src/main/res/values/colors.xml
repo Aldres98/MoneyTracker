@@ -4,14 +4,17 @@
     <color name="colorPrimaryDark">#88b6a7</color>
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#ffff</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#1ca498</color>
     <color name="colorTransparent">#00000000</color>
     <color name="colorLightGreen">#d1e5c6</color>
     <color name="colorTabUnderline">#f7fb91</color>
     <color name="colorFabMainColor">#15a599</color>
 
     <color name="colorItem_name_bg">#fcc31e</color>
+    <color name="item_color_shadow">#30303030</color>
+    <color name="item_color">#fcc31e</color>
     <color name="colorItem_price_bg">#985305</color>
+    <color name="item_color_selected">#985305</color>
 
 
 </resources>

@@ -4,12 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.ActionMode;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -32,6 +38,7 @@ public class ItemsFragment extends android.support.v4.app.Fragment {
     private String type = TYPE_UNKNOWN;
     private ItemsAdapter adapter;
     private Api api;
+    private ActionMode actionMode;
 
     public static ItemsFragment createItemsFragment(String type){
         ItemsFragment fragment = new ItemsFragment();
@@ -70,6 +77,32 @@ public class ItemsFragment extends android.support.v4.app.Fragment {
         RecyclerView recycler = view.findViewById(R.id.recycler);
         recycler.setLayoutManager(new LinearLayoutManager(getContext()));
         recycler.setAdapter(adapter);
+        adapter.setListener(new ItemsAdapterListener() {
+            @Override
+            public void onItemClick(Item item, int position) {
+                if (isInActionModer()){
+                    toggleSelection(position);
+                }
+            }
+
+            @Override
+            public void onItemLongClick(Item item, int position) {
+                if (actionMode!= null){
+                    return;
+                }
+
+                actionMode = ((AppCompatActivity) getActivity()).startSupportActionMode(actionModeCallback);
+                toggleSelection(position);
+            }
+
+            private void toggleSelection(int position){
+                adapter.toggleSelection(position);
+            }
+
+            private boolean isInActionModer(){
+                return actionMode != null;
+            }
+        });
         FloatingActionButton fab = view.findViewById(R.id.fab_add);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,5 +166,51 @@ public class ItemsFragment extends android.support.v4.app.Fragment {
             Toast.makeText(getContext(), item.name + " " + item.price, Toast.LENGTH_LONG).show();
         }
     }
+
+    private void removeSelectedItems(){
+            for (int i = adapter.getSelectedItems().size() - 1; i >= 0; i--){
+                adapter.remove(adapter.getSelectedItems().get(i));
+            }
+
+    }
+
+    private ActionMode.Callback actionModeCallback = new ActionMode.Callback(){
+
+        @Override
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+            MenuInflater inflater = mode.getMenuInflater();
+            inflater.inflate(R.menu.items_menu, menu);
+            return true;
+        }
+
+        @Override
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+            return false;
+        }
+
+        @Override
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.menu_remove:
+                        showDialog();
+                    return true;
+
+                default:
+                    return false;
+            }
+        }
+
+        @Override
+        public void onDestroyActionMode(ActionMode mode) {
+            actionMode = null;
+            adapter.clearSelections();
+        }
+    };
+
+    private void showDialog(){
+        DialogFragment dialog = new ConfirmationDialog();
+        dialog.show(getFragmentManager(), "Confirmation");
+    }
 }
+
 
