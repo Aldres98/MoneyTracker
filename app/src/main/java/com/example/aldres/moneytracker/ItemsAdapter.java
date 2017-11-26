@@ -1,11 +1,14 @@
 package com.example.aldres.moneytracker;
 
+import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.aldres.moneytracker.api.AddResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +59,12 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         notifyItemChanged(pos);
     }
 
-     void clearSelections(){
+    public Item getItemByPosition(int pos) {
+        return items.get(pos);
+    }
+
+
+    void clearSelections(){
         selectedItems.clear();
         notifyDataSetChanged();
     }
@@ -65,13 +73,10 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         return selectedItems.size();
     }
 
-    Item remove(int pos){
-        final Item item = items.remove(pos);
-        notifyItemRemoved(pos);
-        return item;
+    public void updateId(Item item, int id) {
+        item.id = AddResult.id;
+        items.add(item);
     }
-
-
 
     List<Integer> getSelectedItems() {
         List<Integer> items = new ArrayList<>(selectedItems.size());
@@ -81,17 +86,22 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         return items;
     }
 
+    Item remove(int pos){
+        final Item item = items.remove(pos);
+        notifyItemRemoved(pos);
+        return item;
+    }
 
     static class ItemViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name;
         private TextView price;
+        private Resources resources;
 
 
-
-         ItemViewHolder(View itemView) {
+        ItemViewHolder(View itemView) {
             super(itemView);
-
+            resources = itemView.getResources();
             name = itemView.findViewById(R.id.item_name);
             price = itemView.findViewById(R.id.item_price);
 
