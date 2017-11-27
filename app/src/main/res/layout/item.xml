@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_margin="5dp"
     android:minHeight="65dp"
+    android:background="@drawable/item_bg"
     android:layout_height="wrap_content">
 
     <TextView
         style="@style/ItemText"
         android:id="@+id/item_name"
         android:layout_weight="1"
-        android:background="@color/colorItem_name_bg"
         android:textSize="20sp"
         tools:text="Молоко"
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
         style="@style/ItemText"
         android:id="@+id/item_price"
         android:layout_weight="0"
-        android:background="@color/colorItem_price_bg"
+        android:background="@color/item_color_shadow"
         android:textSize="25sp"
         tools:text="35 руб"
         android:layout_width="wrap_content"

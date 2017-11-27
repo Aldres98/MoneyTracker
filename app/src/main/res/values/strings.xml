@@ -9,6 +9,8 @@
     <string name="tab_incomes">Доходы</string>
     <string name="tab_balance">Баланс</string>
     <string name="add_scr_title">Новая запись</string>
+    <string name="selected">Выделено %1$d</string>
+    <string name="confirm_remove">Уверены, что хотите удалить выделенные предметы?</string>
 
     <string-array name="tabs_titles">
         <item>@string/tab_expenses</item>
