@@ -6,4 +6,15 @@
     <dimen name="item_paddingBottom">15dp</dimen>
     <dimen name="item_paddingLeft">5dp</dimen>
     <dimen name="item_paddingRight">5dp</dimen>
+    <dimen name="balance_total_primary_text_size">50sp</dimen>
+    <dimen name="balance_total_secondary_text_size">24sp</dimen>
+
+    <dimen name="balance_title_primary_text_size">24sp</dimen>
+    <dimen name="balance_title_secondary_text_size">13sp</dimen>
+    <dimen name="marginStandard">8dp</dimen>
+    <dimen name="diagramWidth">175dp</dimen>
+    <dimen name="diagramHeight">165dp</dimen>
+
+
+
 </resources>

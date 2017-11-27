@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "185261532101",
+    "project_id": "moneytracker-98ef4"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185261532101:android:9b4ee2f98df572f4",
+        "android_client_info": {
+          "package_name": "com.example.aldres.moneytracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185261532101-o28t20m7k7v3fmsbk0knpodikhek9c0u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aldres.moneytracker",
+            "certificate_hash": "632b4853447fa2c0c695f37cd9d26fd9be19deef"
+          }
+        },
+        {
+          "client_id": "185261532101-ibjh9g0an5i0gekc8c83u98sb4jtdrul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4_093EKJN-ORU6vl4_W1PYZ2YsTxG850"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
