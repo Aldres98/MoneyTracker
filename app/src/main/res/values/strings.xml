@@ -4,6 +4,8 @@
     <string name="price_string">0 &#8381;</string>
     <string name="roubleSign">&#8381;</string>
     <string name="placeholder_string">This part of app is under construction</string>
+    <string name="price">%1$d \u20bd</string>
+
 
     <string name="tab_expenses">Расходы</string>
     <string name="tab_incomes">Доходы</string>
@@ -11,6 +13,11 @@
     <string name="add_scr_title">Новая запись</string>
     <string name="selected">Выделено %1$d</string>
     <string name="confirm_remove">Уверены, что хотите удалить выделенные предметы?</string>
+
+    <string name="balance_total">Ваш баланс</string>
+    <string name="balance_expense">Расход</string>
+    <string name="balance_income">Доход</string>
+
 
     <string-array name="tabs_titles">
         <item>@string/tab_expenses</item>
